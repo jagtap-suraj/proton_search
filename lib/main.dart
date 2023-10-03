@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: backgroundColor,
       ),
       home: ResponsiveLayoutScreen(
-        mobileScreenLayout: MobileScreenLayout(),
+        mobileScreenLayout: const MobileScreenLayout(),
         webScreenLayout: WebScreenLayout(),
       ),
     );
