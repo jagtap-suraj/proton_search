@@ -6,7 +6,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:proton_search/config/api_json.dart';
 
 class ApiService {
-  bool isDummyData = true;
+  bool isDummyData = false;
 
   Future<Map<String, dynamic>> fetchData({required String queryTerm, String start = "0"}) async {
     try {
@@ -17,7 +17,6 @@ class ApiService {
         await dotenv.load(fileName: ".env");
         final apiKey = dotenv.env['GOOGLE_SEARCH_API_KEY'];
         final contextKey = dotenv.env['GOOGLE_SEARCH_CONTEXT_KEY'];
-
 
         final response = await http.get(
           Uri.parse('https://www.googleapis.com/customsearch/v1?key=$apiKey&cx=$contextKey&q=$q&start=$start'),
