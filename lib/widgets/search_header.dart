@@ -30,7 +30,7 @@ class SearchHeader extends StatelessWidget {
           ),
           const SizedBox(width: 27),
           Container(
-            width: size.width * 0.45,
+            width: size.width * 0.5,
             height: 44,
             decoration: BoxDecoration(
               color: searchColor,
@@ -45,7 +45,7 @@ class SearchHeader extends StatelessWidget {
               textAlignVertical: TextAlignVertical.center,
               decoration: InputDecoration(
                 suffixIcon: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 1),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [

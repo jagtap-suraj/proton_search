@@ -37,8 +37,9 @@ class SearchFooter extends StatelessWidget {
         const Divider(thickness: 0, height: 0, color: Colors.black26),
         Container(
           color: footerColor,
-          padding: const EdgeInsets.symmetric(horizontal: 50),
+          //padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 'Help',

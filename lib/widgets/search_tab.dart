@@ -44,98 +44,98 @@ class SearchTab extends StatelessWidget {
   }
 }
 
-class MyPopupMenuButton extends StatelessWidget {
-  const MyPopupMenuButton({super.key});
+// class MyPopupMenuButton extends StatelessWidget {
+//   const MyPopupMenuButton({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return PopupMenuButton(
-      itemBuilder: (context) => [
-        const PopupMenuItem(
-            child: Row(
-          children: [
-            //book
-            Icon(
-              Icons.book_outlined,
-              color: Colors.grey,
-            ),
-            SizedBox(
-              width: 3,
-            ),
-            Text(
-              'Books',
-              style: TextStyle(color: Colors.grey, fontSize: 14),
-            ),
-          ],
-        )),
-        const PopupMenuItem(
-            child: Row(
-          //flight
-          children: [
-            Icon(
-              Icons.flight_outlined,
-              color: Colors.grey,
-            ),
-            SizedBox(
-              width: 3,
-            ),
-            Text(
-              'Flights',
-              style: TextStyle(color: Colors.grey, fontSize: 14),
-            ),
-          ],
-        )),
-        const PopupMenuItem(
-            child: Row(
-          children: [
-            //finance
-            Icon(
-              Icons.attach_money_outlined,
-              color: Colors.grey,
-            ),
-            SizedBox(
-              width: 3,
-            ),
-            Text(
-              'Finance',
-              style: TextStyle(color: Colors.grey, fontSize: 14),
-            ),
-          ],
-        )),
-        const PopupMenuItem(
-          child: Row(
-            children: [
-              //Maps
-              Icon(
-                Icons.map_outlined,
-                color: Colors.grey,
-              ),
-              SizedBox(
-                width: 3,
-              ),
-              Text(
-                'Maps',
-                style: TextStyle(color: Colors.grey, fontSize: 14),
-              ),
-            ],
-          ),
-        ),
-      ],
-      icon: const Row(
-        children: [
-          Icon(
-            Icons.more_vert_outlined,
-            color: Colors.grey,
-          ),
-          SizedBox(
-            width: 3,
-          ),
-          Text(
-            'More',
-            style: TextStyle(color: Colors.grey, fontSize: 14),
-          ),
-        ],
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return PopupMenuButton(
+//       itemBuilder: (context) => [
+//         const PopupMenuItem(
+//             child: Row(
+//           children: [
+//             //book
+//             Icon(
+//               Icons.book_outlined,
+//               color: Colors.grey,
+//             ),
+//             SizedBox(
+//               width: 3,
+//             ),
+//             Text(
+//               'Books',
+//               style: TextStyle(color: Colors.grey, fontSize: 14),
+//             ),
+//           ],
+//         )),
+//         const PopupMenuItem(
+//             child: Row(
+//           //flight
+//           children: [
+//             Icon(
+//               Icons.flight_outlined,
+//               color: Colors.grey,
+//             ),
+//             SizedBox(
+//               width: 3,
+//             ),
+//             Text(
+//               'Flights',
+//               style: TextStyle(color: Colors.grey, fontSize: 14),
+//             ),
+//           ],
+//         )),
+//         const PopupMenuItem(
+//             child: Row(
+//           children: [
+//             //finance
+//             Icon(
+//               Icons.attach_money_outlined,
+//               color: Colors.grey,
+//             ),
+//             SizedBox(
+//               width: 3,
+//             ),
+//             Text(
+//               'Finance',
+//               style: TextStyle(color: Colors.grey, fontSize: 14),
+//             ),
+//           ],
+//         )),
+//         const PopupMenuItem(
+//           child: Row(
+//             children: [
+//               //Maps
+//               Icon(
+//                 Icons.map_outlined,
+//                 color: Colors.grey,
+//               ),
+//               SizedBox(
+//                 width: 3,
+//               ),
+//               Text(
+//                 'Maps',
+//                 style: TextStyle(color: Colors.grey, fontSize: 14),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ],
+//       icon: const Row(
+//         children: [
+//           Icon(
+//             Icons.more_vert_outlined,
+//             color: Colors.grey,
+//           ),
+//           SizedBox(
+//             width: 3,
+//           ),
+//           Text(
+//             'More',
+//             style: TextStyle(color: Colors.grey, fontSize: 14),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }

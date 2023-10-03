@@ -10,7 +10,7 @@ import 'package:proton_search/widgets/social_handles.dart';
 import 'package:proton_search/widgets/web/search_buttons.dart';
 
 class MobileScreenLayout extends StatefulWidget {
-  MobileScreenLayout({super.key});
+  const MobileScreenLayout({super.key});
 
   @override
   State<MobileScreenLayout> createState() => _MobileScreenLayoutState();
@@ -25,6 +25,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      resizeToAvoidBottomInset: false, // to avoid bottom overflow error
       key: _scaffoldKey,
       appBar: AppBar(
         backgroundColor: backgroundColor,
@@ -39,38 +40,43 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
             _scaffoldKey.currentState!.openDrawer();
           },
         ),
-        actions: [
+        actions: const [
           Center(
             child: MyPopupMenu(
-              iconDataList: [
+              itemList: [
                 {
-                  CustomIcons.proton_mail_badge_puvcia: 'Mail'
+                  'iconData': CustomIcons.proton_calendar_badge_b2dvlq,
+                  'text': 'ProtonCalender',
+                  'url': 'https://proton.me/calendar'
                 },
                 {
-                  CustomIcons.proton_vpn_badge_woheus: 'VPN'
+                  'iconData': CustomIcons.proton_drive_badge_mdkwag,
+                  'text': 'ProtonDrive',
+                  'url': 'https://proton.me/drive'
                 },
                 {
-                  CustomIcons.proton_drive_badge_mdkwag: 'Drive'
+                  'iconData': CustomIcons.proton_mail_badge_puvcia,
+                  'text': 'ProtonMail',
+                  'url': 'https://proton.me/mail'
                 },
                 {
-                  CustomIcons.proton_calendar_badge_b2dvlq: 'Calendar'
+                  'iconData': CustomIcons.proton_pass_badge_gvwfkv,
+                  'text': 'ProtonPass',
+                  'url': 'https://proton.me/pass'
                 },
                 {
-                  CustomIcons.proton_pass_badge_gvwfkv: 'Pass'
+                  'iconData': CustomIcons.proton_vpn_badge_woheus,
+                  'text': 'ProtonVPN',
+                  'url': 'https://protonvpn.com/'
                 },
               ],
-              onItemSelected: (iconData) {
-                setState(() {
-                  selectedIcon = iconData;
-                });
-              },
             ),
           ),
-          const SizedBox(width: 10),
-          const SigninButton(),
+          SizedBox(width: 10),
+          SigninButton(),
         ],
       ),
-      drawer: const MenuDrawer(),
+      drawer: const SafeArea(child: MenuDrawer()),
       body: Padding(
         padding: const EdgeInsets.only(
           left: 5,

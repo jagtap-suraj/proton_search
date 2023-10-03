@@ -1,41 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:proton_search/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyPopupMenu extends StatelessWidget {
-  final List<Map<IconData, String>> iconDataList;
-  final Function(IconData) onItemSelected;
+  final List<Map<String, dynamic>> itemList;
 
   const MyPopupMenu({
-    Key? key,
-    required this.iconDataList,
-    required this.onItemSelected,
-  }) : super(key: key);
+    super.key,
+    required this.itemList,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return PopupMenuButton<IconData>(
+    return PopupMenuButton<int>(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
       itemBuilder: (context) {
-        return iconDataList.map((item) {
-          final IconData iconData = item.keys.first;
-          final String text = item.values.first;
-          return PopupMenuItem<IconData>(
-            value: iconData,
-            child: Row(
-              children: [
-                Icon(iconData, color: purpleColor),
-                SizedBox(width: 8), // Add some spacing between icon and text
-                Text(text),
-              ],
+        return itemList.asMap().entries.map((entry) {
+          final int index = entry.key;
+          final IconData iconData = entry.value['iconData'];
+          final String text = entry.value['text'];
+          final String url = entry.value['url']; // Get the URL from the item list
+
+          return PopupMenuItem<int>(
+            value: index,
+            child: GestureDetector(
+              onTap: () {
+                _launchURL(url); // Launch the URL when the item is tapped
+              },
+              child: Row(
+                children: [
+                  Icon(iconData, color: purpleColor),
+                  const SizedBox(width: 8),
+                  Text(
+                    text,
+                    style: const TextStyle(color: Colors.grey),
+                  ),
+                ],
+              ),
             ),
           );
         }).toList();
       },
-      onSelected: (iconData) {
-        onItemSelected(iconData);
-      },
+    );
+  }
+
+  // Function to launch the URL
+
+  _launchURL(String url) async {
+    final uri = Uri.parse(url);
+    launchUrl(
+      uri,
+      mode: LaunchMode.inAppWebView,
     );
   }
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:proton_search/Custom_Icons_Icons.dart';
+import 'package:proton_search/responsive/my_popup_menu.dart';
 import 'package:proton_search/widgets/search_tab.dart';
 
 class SearchTabs extends StatelessWidget {
@@ -40,7 +42,30 @@ class SearchTabs extends StatelessWidget {
           SizedBox(
             width: size.width <= 768 ? 5 : 10,
           ),
-          const MyPopupMenuButton(),
+          const MyPopupMenu(
+            itemList: [
+              {
+                'iconData': Icons.book_outlined,
+                'text': 'Books',
+                'url': ''
+              },
+              {
+                'iconData': Icons.flight_outlined,
+                'text': 'Flights',
+                'url': ''
+              },
+              {
+                'iconData': Icons.attach_money_outlined,
+                'text': 'Finance',
+                'url': ''
+              },
+              {
+                'iconData': Icons.map_outlined,
+                'text': 'Maps',
+                'url': ''
+              },
+            ],
+          ),
         ],
       ),
     );
